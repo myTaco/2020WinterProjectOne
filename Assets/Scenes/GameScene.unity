@@ -1055,7 +1055,7 @@ GameObject:
   - component: {fileID: 1530685053}
   - component: {fileID: 1530685052}
   m_Layer: 0
-  m_Name: ToDoDataManager
+  m_Name: DataManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1073,17 +1073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c050f8ca5569de94cab738b3152e24e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toDoData:
-    content: 
-    month: 
-    day: 
-  toDoText: {fileID: 1194996377}
-  jsonString: "{\n  \"todolist\": [\n    {\n      \"content\": \"\uC591\uD30C \uC0AC\uC624\uAE30\",\n     
-    \"month\": \"11\",\n      \"day\": \"26\"\n    },\n    {\n      \"content\":
-    \"\uC790\uC804\uAC70 \uD0C0\uAE30\",\n      \"month\": \"11\",\n      \"day\":
-    \"27\"\n    },\n    {\n      \"content\": \"\uADF8\uB798\uD53D\uC2A4 \uACFC\uC81C
-    \uC81C\uCD9C\uD558\uAE30\",\n      \"month\": \"11\",\n      \"day\": \"29\"\n   
-    }\n\n  ]\n  \n}"
+  jsonString: 
 --- !u!4 &1530685053
 Transform:
   m_ObjectHideFlags: 0
