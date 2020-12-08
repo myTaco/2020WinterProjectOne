@@ -3,25 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using System.IO; // 파일 관련 처리를 위함
-using UnityEngine.UI; // 유니티 UI를 사용하기 위함
+
 
 public class DataManage : MonoBehaviour
 {
-    List<ToDo> toDoList = new List<ToDo>();
+    public List<ToDo> toDoList = new List<ToDo>();
+
 
     private void Awake()
     {
-        //toDoList.Add(new ToDo("양파 사오기", "11", "12"));
-        //toDoList.Add(new ToDo("감자 사오기", "12", "9"));
-        //toDoList.Add(new ToDo("달팽이 밥주기", "12", "10"));
+        //toDoList.Add(new ToDo("양파 사오기", false));
+        //toDoList.Add(new ToDo("감자 사오기", false));
+        //toDoList.Add(new ToDo("달팽이 밥주기", true));
 
         //SaveDataToJson();
-        LoadDataFromJson();
 
-        foreach(var item in toDoList)
-        {
-            item.show();
-        }
+
+        LoadDataFromJson();
     }
 
     void SaveDataToJson()
@@ -32,7 +30,7 @@ public class DataManage : MonoBehaviour
         string jsonData = "{\"todolist\":[";
         for (int i = 0; i < toDoList.Count; ++i)
         {
-            jsonData += "{\"content\":\"" + toDoList[i].content + "\",\"month\":\"" + toDoList[i].month + "\",\"day\":\"" + toDoList[i].day + "\"}";
+            jsonData += "{\"content\":\"" + toDoList[i].content + "\",\"completion\":\"" + toDoList[i].completion + "\"}";
             if(i!=toDoList.Count-1)
             {
                 jsonData += ",";
@@ -76,20 +74,18 @@ public class DataManage : MonoBehaviour
 public class ToDo
 {
     public string content;
-    public string month;
-    public string day;
+    public bool completion;
 
-    public ToDo(string content, string month, string day)
+    public ToDo(string content, bool completion)
     {
         this.content = content;
-        this.month = month;
-        this.day = day;
+        this.completion = completion;
     }
+
 
     public void show()
     {
         Debug.Log(content);
-        Debug.Log(month);
-        Debug.Log(day);
+        Debug.Log(completion);
     }
 }
